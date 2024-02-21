@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "269410229976",
+    "project_id": "shoppingcart-2a22a",
+    "storage_bucket": "shoppingcart-2a22a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:269410229976:android:dc2c0c880acde34f5cc1ad",
+        "android_client_info": {
+          "package_name": "com.example.shoppingcart"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAONSRlR7Sl4afJzY4vVY1ak1mwA4hILNA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".activity.MainActivity">
 
     <fragment
         android:id="@+id/fragmentContainer"
@@ -23,10 +23,15 @@
         android:background="@color/sky_bg"
         app:layout_constraintEnd_toEndOf="parent"
         app:menu="@menu/main_menu"
+        app:itemIconSize="20dp"
+        app:itemIconPadding="4dp"
+        app:itemActiveIndicatorStyle="@android:color/transparent"
         app:itemTextColor="@color/is_color_bottomview"
         app:itemIconTint="@color/is_color_bottomview"
         android:id="@+id/bottomNavView"
+        app:labelVisibilityMode="labeled"
+        app:itemBackground="@android:color/transparent"
         android:layout_width="match_parent"
-        android:layout_height="0dp"/>
+        android:layout_height="60dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

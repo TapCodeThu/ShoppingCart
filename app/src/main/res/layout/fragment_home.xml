@@ -1,14 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragments.HomeFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Home" />
+   <LinearLayout
+       android:id="@+id/linearLayout"
+       android:background="@color/sky_bg"
+       android:orientation="horizontal"
+       android:weightSum="3"
+       android:layout_width="match_parent"
+       android:layout_height="?attr/actionBarSize">
+       <androidx.appcompat.widget.SearchView
+           app:iconifiedByDefault="false"
+           android:background="@drawable/custom_seachview"
+           android:layout_gravity="start|center"
+           android:layout_marginHorizontal="10dp"
+           android:id="@+id/searchView"
+           android:layout_weight="2"
+           android:layout_width="0dp"
+           app:queryHint="Tìm kiếm..."
+           android:layout_height="wrap_content"/>
+       <androidx.constraintlayout.widget.ConstraintLayout
+           android:layout_gravity="center|end"
+           android:layout_weight="1"
+           android:layout_width="0dp"
+           android:layout_height="wrap_content">
+           <ImageView
+               android:id="@+id/iv_cart"
+               android:src="@drawable/baseline_shopping_cart_24"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintEnd_toEndOf="parent"
+               app:layout_constraintTop_toTopOf="parent"
+               app:layout_constraintBottom_toBottomOf="parent"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"/>
+           <com.nex3z.notificationbadge.NotificationBadge
+               app:layout_constraintBottom_toTopOf="@id/iv_cart"
+               app:layout_constraintStart_toEndOf="@id/iv_cart"
+               app:layout_constraintTop_toTopOf="parent"
+               android:layout_marginTop="10dp"
+               app:layout_constraintEnd_toEndOf="parent"
+               android:layout_marginEnd="35dp"
+               android:layout_width="28dp"
+               android:id="@+id/bage"
+               app:nbMaxTextLength="2"
+               android:layout_height="28dp"/>
 
-</FrameLayout>
+       </androidx.constraintlayout.widget.ConstraintLayout>
+
+   </LinearLayout>
+    <TextView
+        android:id="@+id/tv_title"
+        android:text="@string/listfood_string"
+        android:textColor="@color/red_bg"
+        android:layout_margin="10dp"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:layout_below="@id/linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <View
+        android:layout_below="@id/tv_title"
+        android:layout_marginHorizontal="5dp"
+        android:background="@color/red_bg"
+        android:id="@+id/line1"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_below="@id/line1"
+        android:padding="5dp"
+        android:id="@+id/recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+    <ProgressBar
+        android:visibility="gone"
+        android:id="@+id/progress_load"
+        android:indeterminate="true"
+        android:indeterminateTint="@color/sky_bg"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+</RelativeLayout>

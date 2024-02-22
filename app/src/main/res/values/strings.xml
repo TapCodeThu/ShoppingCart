@@ -5,4 +5,20 @@
     <string name="products">Sản Phẩm</string>
     <string name="cart_string">Giỏ Hàng</string>
     <string name="user_string">Người dùng</string>
+    <string name="listfood_string">Danh sách món ăn</string>
+    <string name="tai_khoan_string">Tài khoản</string>
+    <string name="history_text_string">Lịch sử đặt hàng</string>
+    <string name="replace_pass_string">Đổi mật khẩu</string>
+    <string name="logout_string">Đăng xuất</string>
+    <string name="login_string">Đăng Nhập</string>
+    <string name="email_string">Nhập email của bạn</string>
+    <string name="pass_string_text">Nhập mật khẩu</string>
+    <string name="text_forgotpass">Quên mật khẩu?</string>
+    <string name="text_login">Đăng Nhập</string>
+    <string name="text1">Không có tài khoản?</string>
+    <string name="text2">Đăng ký</string>
+    <string name="text_titile_signup">Đăng Ký</string>
+    <string name="cofirm_pass_text">Xác nhận mật khẩu</string>
+    <string name="tv_login1">Đã có tài khoản!</string>
+    <string name="tv_login2">Đăng nhập</string>
 </resources>

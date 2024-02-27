@@ -7,13 +7,22 @@
     android:layout_height="match_parent"
     tools:context=".activity.SplashActivity">
     <de.hdodenhof.circleimageview.CircleImageView
-        android:src="@drawable/intro_pic"
+        android:src="@drawable/food_logo"
         android:id="@+id/iv_intro"
         android:layout_centerInParent="true"
         android:layout_width="wrap_content"
-        android:layout_height="300dp"/>
-    <TextView
+        android:layout_height="80dp"/>
+    <ProgressBar
+        android:indeterminateTint="@color/sky_bg"
+        android:indeterminate="true"
+        android:id="@+id/progress_load"
         android:layout_below="@id/iv_intro"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:layout_width="20dp"
+        android:layout_height="20dp"/>
+    <TextView
+        android:layout_below="@id/progress_load"
         android:text="Food Shopping !"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"

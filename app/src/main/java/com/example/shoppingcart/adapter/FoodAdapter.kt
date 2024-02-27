@@ -2,12 +2,15 @@ package com.example.shoppingcart.adapter
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.Intent
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView.OnItemClickListener
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.shoppingcart.activity.DetailItemActivity
 import com.example.shoppingcart.databinding.RowFoodItemBinding
 import com.example.shoppingcart.eventbus.UpdateCart
 import com.example.shoppingcart.listener.ICartLoadListener
@@ -75,7 +78,18 @@ class FoodAdapter(private val context: Context,
 
         holder.setClickListener(object : IRecyclerView{
             override fun onItemClickListener(view: View?, position: Int) {
-                    addToCart(list[position])
+                val intent = Intent(context,DetailItemActivity::class.java)
+                val bundle = Bundle()
+                bundle.putString("food_key",currentList.key)
+                bundle.putString("food_name",currentList.name)
+                bundle.putString("food_price",currentList.price)
+                bundle.putString("food_image",currentList.image)
+                bundle.putString("food_descript",currentList.description)
+                intent.putExtras(bundle)
+                context.startActivity(intent)
+
+
+                   // addToCart(list[position])
             }
 
         })

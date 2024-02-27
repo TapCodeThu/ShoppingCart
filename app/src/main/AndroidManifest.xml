@@ -15,6 +15,15 @@
         android:theme="@style/Theme.ShoppingCart"
         tools:targetApi="31">
         <activity
+            android:name=".activity.DetailItemActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.ForgotPassActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.ReplacePassActivity"
+            android:exported="false" />
+        <activity
             android:name=".activity.SignUpActivity"
             android:exported="false" />
         <activity

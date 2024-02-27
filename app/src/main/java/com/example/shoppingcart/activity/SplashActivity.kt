@@ -23,8 +23,17 @@ class SplashActivity : AppCompatActivity() {
         val currentUser = auth.currentUser
         Handler(Looper.myLooper()!!).postDelayed(Runnable {
 
+            if(currentUser != null){
+                startActivity(Intent(this,MainActivity::class.java))
+                finish()
+            }
+            else{
+                startActivity(Intent(this,SignInActivity::class.java))
+                finish()
+            }
 
-                 startActivity(Intent(this,SignInActivity::class.java))
+
+
 
 
         },2000)

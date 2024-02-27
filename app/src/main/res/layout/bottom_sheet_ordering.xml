@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:padding="10dp"
+    android:layout_height="match_parent">
+    <TextView
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:text="Thông tin đặt hàng"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:id="@+id/text1"
+        android:textColor="@color/black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <View
+        android:layout_below="@id/text1"
+        android:background="@color/red_bg"
+        android:layout_marginTop="10dp"
+        android:id="@+id/line1"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"/>
+    <EditText
+        android:layout_below="@id/line1"
+        android:layout_marginTop="20dp"
+        android:hint="Nhập họ và tên (*)"
+        android:padding="10dp"
+        android:id="@+id/edt_name"
+        android:background="@drawable/custom_edt"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"/>
+    <EditText
+        android:layout_below="@id/edt_name"
+        android:layout_marginTop="20dp"
+        android:hint="Nhập địa chỉ nhận hàng (*)"
+        android:padding="10dp"
+        android:id="@+id/edt_address"
+        android:background="@drawable/custom_edt"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"/>
+    <EditText
+        android:layout_below="@id/edt_address"
+        android:layout_marginTop="20dp"
+        android:hint="Nhập số điện thoại (*)"
+        android:padding="10dp"
+        android:id="@+id/edt_sdt"
+        android:background="@drawable/custom_edt"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"/>
+    <EditText
+        android:layout_below="@id/edt_sdt"
+        android:layout_marginTop="20dp"
+        android:hint="Thêm ghi chú cho chủ quán"
+        android:padding="10dp"
+        android:id="@+id/edt_note"
+        android:background="@drawable/custom_edt"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"/>
+    <RadioButton
+        android:text="Thanh toán tiền mặt khi nhận hàng"
+        android:textStyle="italic"
+        android:textColor="@color/red"
+        android:checked="true"
+        android:id="@+id/radiobtn"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/edt_note"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <androidx.appcompat.widget.AppCompatButton
+        android:background="@drawable/custom_btn"
+        android:backgroundTint="@color/sky_bg"
+        android:layout_below="@id/radiobtn"
+        android:layout_marginTop="20dp"
+        android:text="Đặt hàng"
+        android:layout_marginBottom="20dp"
+        android:textColor="@color/white"
+        android:id="@+id/btn_order"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</RelativeLayout>

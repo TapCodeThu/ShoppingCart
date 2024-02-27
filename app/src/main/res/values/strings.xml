@@ -5,7 +5,7 @@
     <string name="products">Sản Phẩm</string>
     <string name="cart_string">Giỏ Hàng</string>
     <string name="user_string">Người dùng</string>
-    <string name="listfood_string">Danh sách món ăn</string>
+    <string name="listfood_string">Gợi ý món ăn</string>
     <string name="tai_khoan_string">Tài khoản</string>
     <string name="history_text_string">Lịch sử đặt hàng</string>
     <string name="replace_pass_string">Đổi mật khẩu</string>
@@ -21,4 +21,16 @@
     <string name="cofirm_pass_text">Xác nhận mật khẩu</string>
     <string name="tv_login1">Đã có tài khoản!</string>
     <string name="tv_login2">Đăng nhập</string>
+    <string name="replace_pass_text">Đổi mật khẩu</string>
+    <string name="nh_p_email_c_a_b_n">Nhập email của bạn</string>
+    <string name="i_m_t_kh_u">Đổi mật khẩu</string>
+    <string name="qu_n_m_t_kh_u">Quên mật khẩu</string>
+    <string name="l_y_l_i_m_t_kh_u">Lấy lại mật khẩu</string>
+    <string name="gi_h_ng">Giỏ hàng</string>
+    <string name="ti_p_t_c_mua_h_ng">Tiếp tục mua hàng</string>
+    <string name="ti_p_t_c_mua_h">Tiếp tục mua hàng</string>
+    <string name="nh_p_m_t_kh_u_c">Nhập mật khẩu cũ</string>
+    <string name="th_m_v_o_gi_h_ng">Thêm vào giỏ hàng</string>
+    <string name="m_t_s_h_nh_nh_kh_c">Một số hình ảnh khác</string>
+    <string name="m_t">Mô tả</string>
 </resources>

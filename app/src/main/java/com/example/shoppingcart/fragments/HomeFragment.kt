@@ -201,7 +201,9 @@ class HomeFragment : Fragment(), IFoodLoadListener, ICartLoadListener {
 
     override fun onCartLoadSuccess(cartModelList: List<CartModel>?) {
         var cartSum = 0
-        for(cartModel in cartModelList!!) cartSum += cartModel.quantity
+      if(cartModelList != null){
+          for(cartModel in cartModelList) cartSum += cartModel.quantity
+      }
         binding.bage.setNumber(cartSum)
 
     }

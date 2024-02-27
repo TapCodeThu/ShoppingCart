@@ -7,4 +7,6 @@
     <color name="bottomTabActive">#F24040</color>
     <color name="bottomTabInActive">#171717</color>
     <color name="black_overlay">#667C7474</color>
+    <color name="success_color">#00C853</color>
+    <color name="grey_color">#747272</color>
 </resources>

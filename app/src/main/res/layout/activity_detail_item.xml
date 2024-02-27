@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".activity.DetailItemActivity">
+    <LinearLayout
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/layout_1"
+        android:background="@color/sky_bg"
+        android:weightSum="16"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize">
+        <ImageView
+            android:layout_weight="3"
+            android:src="@drawable/baseline_arrow_back_ios_24"
+            android:layout_gravity="start|center"
+            android:id="@+id/btn_back"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_weight="10"
+            android:text="Chi tiết món ăn"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:layout_gravity="start|center"
+            android:gravity="center"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+        <ImageView
+            android:layout_weight="3"
+            android:src="@drawable/baseline_add_shopping_cart_24"
+            android:layout_gravity="start|center"
+            android:id="@+id/btn_add_cart_toolbar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+   <RelativeLayout
+       android:id="@+id/relativeLayout"
+       app:layout_constraintTop_toBottomOf="@id/layout_1"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintBottom_toTopOf="@id/btn_add"
+       android:layout_width="match_parent"
+       android:layout_height="0dp">
+       <ScrollView
+           android:layout_alignParentTop="true"
+           android:layout_alignParentStart="true"
+           android:id="@+id/scrollview"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+           <RelativeLayout
+               android:layout_width="match_parent"
+               android:layout_height="match_parent">
+
+               <ImageView
+                   android:id="@+id/image_main"
+                   android:layout_width="match_parent"
+                   android:layout_height="250dp"
+                   android:layout_alignParentStart="true"
+                   android:layout_alignParentTop="true"
+                   android:layout_marginStart="4dp"
+                   android:layout_marginTop="3dp"
+                   android:scaleType="fitXY"
+                   android:src="@drawable/image_no_available" />
+
+               <TextView
+                   android:textSize="20sp"
+                   android:textStyle="bold"
+                   android:layout_below="@id/image_main"
+                   android:layout_margin="10dp"
+                   android:id="@+id/tv_name"
+                   android:text="Ga Rang Muoi"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"/>
+               <TextView
+                   android:text="Giá:"
+                   android:textSize="18sp"
+                   android:layout_below="@id/tv_name"
+                   android:layout_marginStart="10dp"
+                   android:id="@+id/tv1"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"/>
+               <TextView
+                   android:text="100 000 VND"
+                   android:textColor="@color/red_bg"
+                   android:textStyle="bold"
+                   android:textSize="18sp"
+                   android:layout_below="@id/tv_name"
+                   android:layout_marginStart="10dp"
+                   android:id="@+id/tv_price"
+                   android:layout_toEndOf="@id/tv1"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"/>
+               <View
+                   android:layout_marginTop="20dp"
+                   android:layout_marginHorizontal="5dp"
+                   android:id="@+id/line1"
+                   android:background="@color/bottomTabActive"
+                   android:layout_below="@id/tv_price"
+                   android:layout_width="match_parent"
+                   android:layout_height="2dp"/>
+               <TextView
+                   android:text="@string/m_t"
+                   android:id="@+id/tv2"
+                   android:textStyle="bold"
+                   android:textSize="16sp"
+                   android:textColor="@color/bottomTabActive"
+                   android:layout_below="@id/line1"
+                   android:layout_marginStart="10dp"
+                   android:layout_marginTop="20dp"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"/>
+               <TextView
+                   android:id="@+id/tv_description"
+                   android:layout_marginHorizontal="10dp"
+                   android:layout_below="@id/tv2"
+                   android:text="Lam tu nguyen lieu..."
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"/>
+               <TextView
+                   android:text="@string/m_t_s_h_nh_nh_kh_c"
+                   android:id="@+id/tv3"
+                   android:textStyle="bold"
+                   android:textSize="16sp"
+                   android:textColor="@color/bottomTabActive"
+                   android:layout_below="@id/tv_description"
+                   android:layout_marginStart="10dp"
+                   android:layout_marginTop="20dp"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"/>
+               <androidx.recyclerview.widget.RecyclerView
+                   android:layout_below="@id/tv3"
+                   android:layout_margin="10dp"
+                   android:id="@+id/recyclerview"
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"/>
+
+
+           </RelativeLayout>
+
+       </ScrollView>
+   </RelativeLayout>
+    <androidx.appcompat.widget.AppCompatButton
+
+        android:id="@+id/btn_add"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@drawable/custom_btn"
+        android:backgroundTint="@color/button_states"
+        android:backgroundTintMode="src_in"
+        android:text="@string/th_m_v_o_gi_h_ng"
+        android:textColor="@color/white" />
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

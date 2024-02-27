@@ -26,6 +26,10 @@ class SignInActivity : AppCompatActivity() {
     }
 
     private fun actionButton() {
+        binding.tvForgetpass.setOnClickListener {
+            startActivity(Intent(this,ForgotPassActivity::class.java))
+            finish()
+        }
         binding.tvSignup.setOnClickListener {
             startActivity(Intent(this,SignUpActivity::class.java))
         }
@@ -35,8 +39,10 @@ class SignInActivity : AppCompatActivity() {
             binding.progressBar.visibility = View.VISIBLE
             val email = binding.edtEmail.text.toString().trim()
             val password = binding.edtPassword.text.toString().trim()
-            if(TextUtils.isEmpty(email) && TextUtils.isEmpty(password)){
+            if(TextUtils.isEmpty(email) || TextUtils.isEmpty(password)){
                 Toast.makeText(this,"Vui lòng nhập thông tin!",Toast.LENGTH_SHORT).show()
+                binding.btnLogin.visibility = View.VISIBLE
+                binding.progressBar.visibility = View.GONE
             }
             else{
                 signInAccount(email,password)
@@ -65,7 +71,6 @@ class SignInActivity : AppCompatActivity() {
             .addOnFailureListener { e->
                 binding.progressBar.visibility = View.GONE
                 binding.btnLogin.visibility = View.VISIBLE
-                Toast.makeText(this,e.message,Toast.LENGTH_SHORT).show()
             }
 
     }

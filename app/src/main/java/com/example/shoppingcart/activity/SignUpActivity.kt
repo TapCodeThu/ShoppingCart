@@ -55,13 +55,20 @@ class SignUpActivity : AppCompatActivity() {
             val email = binding.edtEmail.text.toString().trim()
             val password = binding.edtPassword.text.toString().trim()
             val confirm_pass = binding.edtConfirm.text.toString().trim()
-            if(TextUtils.isEmpty(email) && TextUtils.isEmpty(password) && TextUtils.isEmpty(confirm_pass)){
+            if(TextUtils.isEmpty(email) || TextUtils.isEmpty(password) || TextUtils.isEmpty(confirm_pass)){
                 Toast.makeText(this,"Vui lòng điền thông tin!",Toast.LENGTH_SHORT).show()
+                binding.btnSignup.visibility = View.VISIBLE
+                binding.progressBar.visibility = View.GONE
                 return@setOnClickListener
             }
             else{
                 if(password == confirm_pass){
                     registerAccount(email,password)
+                }
+                else{
+                    Toast.makeText(this,"Sai mật khẩu!",Toast.LENGTH_SHORT).show()
+                    binding.btnSignup.visibility = View.VISIBLE
+                    binding.progressBar.visibility = View.GONE
                 }
             }
 

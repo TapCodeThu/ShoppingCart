@@ -3,11 +3,13 @@ package com.example.shoppingcart.activity
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
+import android.view.View
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
 import com.example.shoppingcart.R
+import com.example.shoppingcart.adapter.CartAdapter
 import com.example.shoppingcart.databinding.ActivityMainBinding
 import com.example.shoppingcart.eventbus.UpdateCart
 import com.example.shoppingcart.listener.ICartLoadListener
@@ -27,6 +29,7 @@ class MainActivity : AppCompatActivity(),  NavigationBarView.OnItemSelectedListe
     private lateinit var binding: ActivityMainBinding
     private lateinit var cartLoadListener: ICartLoadListener
     private lateinit var auth: FirebaseAuth
+    private lateinit var cartAdapter: CartAdapter
 
 
     override fun onStart() {
@@ -80,6 +83,7 @@ class MainActivity : AppCompatActivity(),  NavigationBarView.OnItemSelectedListe
             R.id.userFragment ->{
                 findNavController(R.id.fragmentContainer).navigate(R.id.userFragment)
             }
+
         }
         return true
     }
@@ -87,7 +91,9 @@ class MainActivity : AppCompatActivity(),  NavigationBarView.OnItemSelectedListe
     override fun onCartLoadSuccess(cartModelList: List<CartModel>?) {
         var cartSum = 0
         for(cartModel in cartModelList!!) cartSum += cartModel.quantity
-       if(cartSum >0){ binding.bottomNavView.getOrCreateBadge(R.id.cartFragment).number = cartSum}
+       if(cartSum >0){
+           binding.bottomNavView.getOrCreateBadge(R.id.cartFragment).number = cartSum
+       }
     }
 
     override fun onCartLoadFailed(message: String?) {
@@ -106,7 +112,12 @@ class MainActivity : AppCompatActivity(),  NavigationBarView.OnItemSelectedListe
                         cartModel!!.key = cartSnapshot.key
                         cartModels.add(cartModel)
                     }
+
+
                     cartLoadListener.onCartLoadSuccess(cartModels)
+                    if(cartModels.isEmpty()){
+                        binding.bottomNavView.removeBadge(R.id.cartFragment)
+                    }
                 }
 
                 override fun onCancelled(error: DatabaseError) {
